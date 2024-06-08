@@ -1,19 +1,23 @@
 # Wokflow location ./.github/workflows/github-actions-workflow.yaml
 
-name: pipeline name 
-run-name: run name
-on: [push] # behavior
-jobs:
-  Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+name: pipeline name # workflow / pipeline
+run-name: run name # name of the pipeline / workflow visible on github
+on: [push]  # Event / Triggers
+jobs: # Set of steps running on same runner, by default, jobs have no dependencies and run in parallel with each other.`When a job takes a dependency on another job, it will wait for the dependent job to complete before it can run.
+  Explore-GitHub-Actions: # actions / job
+    runs-on: ubuntu-latest # runner
     steps:
       - run: |
-          echo "My first job"
-          pwd
-          touch text.txt
-          ls
-
-      # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        echo "My first job"
+        pwd$ sh <(curl -L https://nixos.org/nix/install)
+        touch text.txt
+        ls
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install -g bats
+      - run: bats -v
       # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       # - name: Check out repository code
@@ -25,3 +29,4 @@ jobs:
       #     ls ${{ github.workspace }}
       # - run: echo "🍏 This job's status is ${{ job.status }}."
 
+# Workflows examples https://github.com/actions/starter-workflows
