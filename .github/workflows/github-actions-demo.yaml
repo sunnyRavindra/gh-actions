@@ -1,6 +1,6 @@
 # Wokflow location ./.github/workflows/github-actions-workflow.yaml
 
-name: pipeline name # workflow / pipeline
+name: # pipeline name # workflow / pipeline
 run-name: run name # name of the pipeline / workflow visible on github
 on: [push]  # Event / Triggers
 jobs: # Set of steps running on same runner, by default, jobs have no dependencies and run in parallel with each other.`When a job takes a dependency on another job, it will wait for the dependent job to complete before it can run.
