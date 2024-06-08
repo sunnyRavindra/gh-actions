@@ -1,32 +1,28 @@
 # Wokflow location ./.github/workflows/github-actions-workflow.yaml
 
-name: # pipeline name # workflow / pipeline
-run-name: run name # name of the pipeline / workflow visible on github
-on: [push]  # Event / Triggers
-jobs: # Set of steps running on same runner, by default, jobs have no dependencies and run in parallel with each other.`When a job takes a dependency on another job, it will wait for the dependent job to complete before it can run.
-  Explore-GitHub-Actions: # actions / job
+name: pipeline name # workflow / pipeline, if omitted, the name of the file is used (Optional)
+run-name: run name # name of the pipeline / workflow visible on github (Optional)
+on: [push]  # Event / Triggers (This will be tiggered on push on every branch)
+jobs: # Set of steps running on same runner, by default, jobs run in parallel.`When a job takes a dependency on another job, it will run in series.
+  Explore-GitHub-Actions: # Job name
     runs-on: ubuntu-latest # runner
-    steps:
-      - run: |
+    steps: # set of actions or scripts
+      - run: | # run a shell command / script
           echo "My first job"
           pwd sh <(curl -L https://nixos.org/nix/install)
           touch text.txt
           ls
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
+      - uses: actions/checkout@v4 # Fetches git repo , use an action from the marketplace / tasks
+      - uses: actions/setup-node@v4 # Setup nodejs
+        with: 
+          node-version: '20' # Node version
       - run: npm install -g bats
       - run: bats -v
-      # - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      # - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      # - name: Check out repository code
-      #   uses: actions/checkout@v4
-      # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      # - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      # - name: List files in the repository
-      #   run: |
-      #     ls ${{ github.workspace }}
-      # - run: echo "🍏 This job's status is ${{ job.status }}."
+
+# Customized actions can be defined in
+    The same repository as your workflow file
+    Any public repository
+    A published Docker container image on Docker Hub
+
 
 # Workflows examples https://github.com/actions/starter-workflows
