@@ -10,6 +10,7 @@ jobs:
       - run: |
           echo "My pipeline"
           pwd
+          touch text.txt
           ls
 
       # - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
