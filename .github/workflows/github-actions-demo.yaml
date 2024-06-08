@@ -8,10 +8,10 @@ jobs: # Set of steps running on same runner, by default, jobs have no dependenci
     runs-on: ubuntu-latest # runner
     steps:
       - run: |
-        echo "My first job"
-        pwd$ sh <(curl -L https://nixos.org/nix/install)
-        touch text.txt
-        ls
+          echo "My first job"
+          pwd sh <(curl -L https://nixos.org/nix/install)
+          touch text.txt
+          ls
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
