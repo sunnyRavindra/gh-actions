@@ -20,9 +20,9 @@ jobs: # Set of steps running on same runner, by default, jobs run in parallel.`W
       - run: bats -v
 
 # Customized actions can be defined in
-    The same repository as your workflow file
-    Any public repository
-    A published Docker container image on Docker Hub
+    # The same repository as your workflow file
+    # Any public repository
+    # A published Docker container image on Docker Hub
 
 
 # Workflows examples https://github.com/actions/starter-workflows
