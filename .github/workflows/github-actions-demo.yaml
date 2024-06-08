@@ -1,14 +1,14 @@
 # Wokflow location ./.github/workflows/github-actions-workflow.yaml
 
-name: GitHub Actions Demo # Name of the pipeline
-run-name: ${{ github.actor }} is testing out GitHub Actions ${{ github.event_name }} 🚀
-on: [push]
+name: pipeline name 
+run-name: run name
+on: [push] # behavior
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "My pipeline"
+          echo "My first job"
           pwd
           touch text.txt
           ls
