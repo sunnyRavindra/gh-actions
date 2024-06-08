@@ -1,7 +1,7 @@
 # Wokflow location ./.github/workflows/github-actions-workflow.yaml
 
-name: pipeline name # workflow / pipeline, if omitted, the name of the file is used (Optional)
-run-name: run name # name of the pipeline / workflow visible on github (Optional)
+name: My first workflow # workflow / pipeline, if omitted, the name of the file is used (Optional)
+run-name: My firt run # name of the pipeline / workflow visible on github (Optional)
 on: [push]  # Event / Triggers (This will be tiggered on push on every branch)
 jobs: # Set of steps running on same runner, by default, jobs run in parallel.`When a job takes a dependency on another job, it will run in series.
   Explore-GitHub-Actions: # Job name
@@ -23,6 +23,5 @@ jobs: # Set of steps running on same runner, by default, jobs run in parallel.`W
     # The same repository as your workflow file
     # Any public repository
     # A published Docker container image on Docker Hub
-
 
 # Workflows examples https://github.com/actions/starter-workflows
